@@ -55,6 +55,7 @@ complex_2_visits = 0;
 complex_3_visits = 0;
 complex_4_visits = 0;
 
+
 for i=1:NUM_TRIALS
     hour1 = poissrnd(lambda1); 
     hour2 = poissrnd(lambda2);
