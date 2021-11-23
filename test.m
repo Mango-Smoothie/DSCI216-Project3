@@ -1,0 +1,49 @@
+NUM_TRIALS = 100000;
+res6 = 0
+p = .315 % p(hit)
+for i = 1:NUM_TRIALS
+
+res6 = res6 + geornd(.315);
+end
+res6 = res6 / NUM_TRIALS;
+disp(res6);
+
+% % % % % % % % % % % % % % % % % % % % % 
+
+k = 10; % 10 successful hits
+totalMiss = 0;
+for i = 1:NUM_TRIALS
+
+totalMiss = totalMiss + nbinrnd(k, .315);
+ 
+end
+avgMiss = totalMiss / NUM_TRIALS;
+
+avgProfit = (avgMiss * -50) + (k * 75);
+
+
+disp(avgProfit);
+
+% % % % % % % % % % % % % % % % % % % % % 
+
+pRange = 0:0.1:1;
+
+k = 10; % 10 successful hits
+totalMissRange  = 0;
+for i = 1:NUM_TRIALS
+totalMissRange = totalMissRange + nbinrnd(k, pRange);
+end
+
+avgMissRange = totalMissRange / NUM_TRIALS;
+
+avgProfitRange = (avgMissRange * -50) + (k * 75);
+
+plot(pRange, avgProfitRange)
+xlabel('Batting Average')
+ylabel('Profit')
+grid on
+hold on
+y = 0; 
+plot(pRange,y);
+hold off
+

@@ -4,6 +4,7 @@ p = 0.315; % P(batting average)
 HITS = 10;
 
 %% 6. Average #pitches for a single hit
+
 singlehit = 1/p; % E[x] = 1/p where x = geornd(p)
 int_singlehit = floor(singlehit);
 
