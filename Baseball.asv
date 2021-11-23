@@ -34,7 +34,7 @@ intavgMiss = floor(avgMiss);
 msg2 = sprintf('Average number of misses during a Single Practice: %.2f or %d pitches', avgMiss, intavgMiss);
 disp(msg2);
 
-msg3 = sprintf('On each practice, Mr. Ortiz has a net profit of %f dollars', avgProfit);
+msg3 = sprintf('On each practice, Mr. Ortiz has a net profit of %f dollars\n', avgProfit);
 fprintf('\n');
 disp(msg3);
 
