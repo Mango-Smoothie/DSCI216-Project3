@@ -1,7 +1,9 @@
 % Problem 6, 7, 8
+
 NUM_TRIALS = 100000;
 p = .315; % p(hit)
-k = 10;
+k = 10; % number of successful hit
+
 %% 6. Average #pitches for a single hit
 
 res6 = 0;
@@ -18,7 +20,6 @@ disp(msg);
 
 %% 7. Average money during a single pratice 
 
-k = 10; % 10 successful hits
 totalMiss = 0;
 for i = 1:NUM_TRIALS
 
@@ -39,22 +40,6 @@ fprintf('\n');
 disp(msg3);
 
 %% 8. Function of batting average from 0.0 to 1.000. When does Mr. Ortiz lose money? When does Mr. Ortiz break even
-k = 10; % 10 successful hits
-totalMiss = 0;
-for i = 1:NUM_TRIALS
-
-totalMiss = totalMiss + nbinrnd(k, .315);
- 
-end
-avgMiss = totalMiss / NUM_TRIALS;
-
-avgProfit = (avgMiss * -50) + (k * 75);
-
-
-disp(avgProfit);
-
-% % % % % % % % % % % % % % % % % % % % % 
-
 pRange = 0:0.1:1;
 
 k = 10; % 10 successful hits
