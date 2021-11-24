@@ -28,11 +28,8 @@ for t=1:1:length(SAMPLES)
     employees = (revenue/2 - donation)/eCost;
     intEmployees = floor((revenue/2 - donation)/eCost);
     
-    % title = sprintf('Simple Model: Average Number of Cougar Visits Over the 4-Hour Time Interval');
-    % hour = sprintf('4 hours of operation: %4.0f visits', avgSimpleVisits);
     disp('Simple Model: Average Number of Cougar Visits Over the 4-Hour Time Interval');
     fprintf('4 hours of operation: %4.0f visits\n', avgSimpleVisits);
-    % fprintf('4 hours of operation: %4.0f visits', avgSimpleVisits);
     fprintf('\nAverage Revenue: %4.2f dollars\n', revenue);
     fprintf('Average Donation: %4.2f dollars\n', donation);
     fprintf('Max. Number of Employees: %4.2f or %d employees\n\n', employees, intEmployees);

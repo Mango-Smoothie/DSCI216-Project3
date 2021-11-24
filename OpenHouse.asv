@@ -1,49 +1,42 @@
 % Experiments for question 1 and 2
 
 % Question 1
+pCHICKEN = 2/3;
+SAMPLES = [10, 100, 1000, 10000, 100000];
 
 % NUM_TRIALS = 10000;
-% 
-% chicken = 2/3; % p(chicken) = 2/3
-% beef = 1/3; % p(beef) = 1/3
-% N = 100;
-% result_chicken = 0;
-% result_beef = 0;
-% 
-% for i = 1:NUM_TRIALS
-%     % E(chicken)
-%     x = binornd(N,chicken);
-%     result_chicken = result_chicken + x;
-%     
-%     % E(beef)
-%     y = N - x;
-%     result_beef = result_beef + y;
-% end 
-% 
-% average_chicken = result_chicken/NUM_TRIALS;
-% average_beef = result_beef/NUM_TRIALS;
-pCHICKEN = 2/3;
-NUM_TRIALS = 10000;
 BINOM_TRIALS= 100;
 
-binomialSamples=  binornd(BINOM_TRIALS,pCHICKEN,1,NUM_TRIALS);
-averageChicken = mean(binomialSamples);
-averagebeef = BINOM_TRIALS - averageChicken);
-msg= sprintf('Average Number of Successes in %d Trials', NUM_TRIALS);
-msg2= sprintf('E(Chicken): %3.1f', averageChicken);
-msg3= sprintf('E(Beef): %3.1f', average_beef);
 
-disp(msg);
-disp(msg2);
-disp(msg3);
-disp("------------------------------------------------");
-% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
-CHICKEN_PRICE = 3;
-BEEF_PRICE = 4;
-
-average_chicken_cost = average_chicken * CHICKEN_PRICE;
-average_beef_cost = average_beef * BEEF_PRICE;
-total_average_cost = average_chicken_cost + average_beef_cost;
-
-msg4= sprintf('The average total amount of money spent: %3.2f', total_average_cost);
-disp(msg4);
+for t=1:1:length(SAMPLES)
+    numSamples = SAMPLES(t);
+    
+    fprintf('Number of Samples: %d\n\n', numSamples);
+    
+    binomialSamples=  binornd(BINOM_TRIALS,pCHICKEN,1,NUM_TRIALS);
+    
+    % calculate the average chicken and beef
+    averageChicken = mean(binomialSamples);
+    averageBeef = BINOM_TRIALS - averageChicken;
+    
+    fprintf('Average Number of Successes in %d Trials\n', NUM_TRIALS);
+    fprintf('E(Chicken): %3.1f\n', averageChicken);
+    fprintf('E(Beef): %3.1f\n\n', averageBeef);
+    % disp(msg);
+    % disp(msg2);
+    % disp(msg3);
+    % disp("------------------------------------------------");
+    
+    % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+    % Question 2
+    %
+    CHICKEN_PRICE = 3;
+    BEEF_PRICE = 4;
+    
+    averageChickenCost = averageChicken * CHICKEN_PRICE;
+    averageBeefCost = averageBeef * BEEF_PRICE;
+    totalAverageCost = averageChickenCost + averageBeefCost;
+    
+    fprintf('The average total amount of money spent: %3.2f\n', totalAverageCost);
+    disp("------------------------------------------------");
+end
