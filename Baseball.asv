@@ -1,7 +1,7 @@
 % Problem 6, 7, 8
 
 figure(1);
-counter = 1;
+counter = 0;
 p = .315; % p(hit)
 k = 10; % number of successful hit
 
@@ -30,10 +30,8 @@ for t=1:1:length(SAMPLES)
     intAvgMissPractice = floor(avgMissPractice);
     
     fprintf('Average number of Misses during a Single Practice: %.2f or %d pitches\n', avgMissPractice, intAvgMissPractice);
-    fprintf('On each practice, Mr. Ortiz has a net profit of %.2f dollars\n', avgProfit);
-    disp("-----------------------------------------------------------------------");
-
-        
+    fprintf('On each practice, Mr. Ortiz has a net profit of %f dollars\n', avgProfit);
+    
     %% 8. Function of batting average from 0.0 to 1.000. When does Mr. Ortiz lose money? When does Mr. Ortiz break even
     pRange = 0:0.1:1;
     
@@ -46,11 +44,9 @@ for t=1:1:length(SAMPLES)
     
     avgProfitRange = (avgMissRange * -50) + (k * 75);
     
-    hold on;
-    subplot(3,2,counter);
+    hold on
+    subplot(2,3,counter);
     plot(pRange, avgProfitRange)
-    msg= sprintf('P(Hit) vs Profit (SampleSize = %d)',numSamples);
-    title(msg);
     xlabel('Batting Average')
     ylabel('Profit')
     grid on
